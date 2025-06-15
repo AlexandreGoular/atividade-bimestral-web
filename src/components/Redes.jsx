@@ -1,8 +1,11 @@
+import github from '../assets/github.png'
+
 
 export function Redes() {
     return (
         <>
-            <img src="../../src/assets/github.png" alt="" />
+            <img src={github} alt="" />
+        <h1>A</h1>
         </>
     );
 }
