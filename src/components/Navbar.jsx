@@ -11,5 +11,5 @@ export function Navbar() {
         <a href="#">Admin</a>    
         
         </>
-    )
+  )
 }

@@ -1,11 +1,13 @@
 import github from '../assets/github.png'
-
+import instagram from '../assets/instagram.png'
+import linkdim from '../assets/linkdim.png'
 
 export function Redes() {
     return (
         <>
             <img src={github} alt="" />
-        <h1>A</h1>
+            <img srr={instagram} alt="" /> 
+            <img src={linkdim} alt="" /> 
         </>
     );
 }
