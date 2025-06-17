@@ -5,9 +5,9 @@ import linkdim from '../assets/linkdim.png'
 export function Redes() {
     return (
         <>
-            <img src={github} alt="" />
-            <img srr={instagram} alt="" /> 
-            <img src={linkdim} alt="" /> 
+            <img src={github} alt="" /> 
+            <img src={linkdim} alt="" />
+            <img src={instagram} alt="" />
         </>
     );
 }
