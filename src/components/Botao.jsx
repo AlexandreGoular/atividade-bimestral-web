@@ -1,8 +1,10 @@
+import styles from "../styles/index.module.css"
+
 export function Botao() {
     return (
         <>
         
-        <button>Download</button>
+        <button className={styles.botao}>Download</button>
         
         </>
     )
