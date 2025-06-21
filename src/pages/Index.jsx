@@ -1,8 +1,8 @@
 import { Botao } from "../components/Botao";
 import { Navbar } from "../components/Navbar";
 import { Redes } from "../components/Redes.jsx";
+import { Conteudos } from "../components/Conteudos.jsx";
 
-import foto from "../assets/celeste.jpg";
 import styles from "../styles/index.module.css";
 
 export function Index() {
@@ -30,9 +30,8 @@ export function Index() {
         <Redes />
       </main>
 
-      <h1>On</h1>
       <section className={styles.on} id="on">
-        <img src={foto} className={styles.foto1} />
+        <Conteudos />
       </section>
     </>
   );
