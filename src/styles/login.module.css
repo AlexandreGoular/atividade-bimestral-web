@@ -1,0 +1,45 @@
+.container {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1.8px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button {
+    display: block;
+    width: 60%;
+    padding: 12px 15px;
+    margin: 20px auto;
+    font-size: 16px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    border: 1.8px solid #ccc;
+    outline: none;
+    transition: all 0.3s ease;
+}
