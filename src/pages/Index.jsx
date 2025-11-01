@@ -2,6 +2,7 @@ import { Botao } from "../components/Botao";
 import { Navbar } from "../components/Navbar";
 import { Redes } from "../components/Redes.jsx";
 import { Conteudos } from "../components/Conteudos.jsx";
+import { Avaliacao } from "../pages/Avaliacao.jsx"
 
 import styles from "../styles/index.module.css";
 
@@ -30,9 +31,11 @@ export function Index() {
         <Redes />
       </main>
 
-      <section className={styles.on} id="on">
-        <Conteudos />
-      </section>
+      
+      
+      <footer>
+        <Avaliacao />
+      </footer>
     </>
   );
 }
