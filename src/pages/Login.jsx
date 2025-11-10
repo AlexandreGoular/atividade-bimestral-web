@@ -21,7 +21,7 @@ export function Login() {
       if (!res.ok) throw new Error("Login invalido")
       const data = await res.json()
 
-      localStorage.setItem("token", data.access_token)
+      localStorage.setItem("token", data.token)
       window.location.href = "/avaliacoes"
     } catch (err) {
       setErro(err.message)
