@@ -9,7 +9,7 @@ export function Avaliacao() {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://dungeons-souls.onrender.com/avaliacoes/", {
+      const response = await fetch("https://api-dungeons-souls.onrender.com/avaliacoes/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
