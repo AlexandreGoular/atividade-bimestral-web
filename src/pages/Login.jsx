@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar } from "../components/Navbar";
-import styles from "../styles/login.module.css";
 import { useState } from "react"
+import styles from "../styles/avaliacao_page.module.css"
 
 
 export function Login() {
@@ -32,11 +32,21 @@ export function Login() {
     <>
       <Navbar />
 
-      <form onSubmit={handleLogin}>
-        <input placeholder="Nome" value={nome} onChange={(e) => setNome(e.target.value)} />
-        <input placeholder="Senha" value={senha} type="password" onChange={(e) => setSenha(e.target.value)} />
+      <h1>Login</h1>
+
+      <div className={styles.containerAvaliacao}>
+        <form onSubmit={handleLogin}>
+          <div className={styles.linha}>
+            <input placeholder="Nome" value={nome} onChange={(e) => setNome(e.target.value)} />
+          </div>
+          <div className={styles.linha}>
+            <input placeholder="Senha" value={senha} type="password" onChange={(e) => setSenha(e.target.value)} />
+          </div>
+      
         <button type="submit">Entrar</button>
-      </form>
+        </form>
+      </div>
+      
       </>
     )
   

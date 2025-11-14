@@ -10,6 +10,7 @@ export function Avaliacoes() {
     try {
       const res = await fetch("https://api-dungeons-souls.onrender.com/avaliacoes/", {
         headers: {
+          "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
       });
@@ -23,7 +24,7 @@ export function Avaliacoes() {
       const data = await res.json();
       setAvaliacoes(data);
     } catch (err) {
-      console.error("Erro ao carregar avaliações:", err);
+      console.error(err);
     }
   };
 
@@ -32,37 +33,65 @@ export function Avaliacoes() {
       window.location.href = "/login";
       return;
     }
-
     carregarAvaliacoes();
-
-    const interval = setInterval(() => {
-      carregarAvaliacoes();
-    }, 5000);
-
-    return () => clearInterval(interval);
   }, [token]);
+
+  const excluirAvaliacao = async (id) => {
+    if (!confirm("Tem certeza que deseja excluir esta avaliação?")) return;
+
+    try {
+      const res = await fetch(`https://api-dungeons-souls.onrender.com/avaliacoes/${id}`, {
+        method: "DELETE",
+      });
+      if (res.ok) {
+        await carregarAvaliacoes();
+      } else {
+        alert("Erro ao excluir avaliação");
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const editarAvaliacao = async (id, avaliacaoAtual) => {
+    const novaAvaliacao = prompt("Digite a nova avaliação:", avaliacaoAtual);
+    if (!novaAvaliacao || novaAvaliacao.trim() === "") return;
+
+    try {
+      const res = await fetch(`https://api-dungeons-souls.onrender.com/avaliacoes/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ avaliacao: novaAvaliacao }),
+      });
+
+      if (res.ok) {
+        await carregarAvaliacoes();
+      } else {
+        alert("Erro ao atualizar avaliação");
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   return (
     <>
       <Navbar />
-      <div className={styles.container}>
-        <div className={styles.topicos}>
-          <h1>Email</h1>
-          <h1>Avaliação</h1>
-        </div>
-
-        <ul className={styles.lista}>
-          {avaliacoes.length === 0 ? (
-            <p>Nenhuma avaliação encontrada.</p>
-          ) : (
-            avaliacoes.map((a) => (
-              <li key={a.id}>
-                <strong>{a.email}</strong> — {a.avaliacao}
-              </li>
-            ))
-          )}
-        </ul>
+      <div className={styles.topicos}>
+        <h1>Email</h1>
+        <h1>Avaliação</h1>
       </div>
+      <ul>
+        {avaliacoes.map((a) => (
+          <li key={a.id}>
+            <strong>{a.email}</strong> - {a.avaliacao}
+            <div>
+              <button onClick={() => editarAvaliacao(a.id, a.avaliacao)}>Editar</button>
+              <button onClick={() => excluirAvaliacao(a.id)}>Excluir</button>
+            </div>
+          </li>
+        ))}
+      </ul>
     </>
   );
 }

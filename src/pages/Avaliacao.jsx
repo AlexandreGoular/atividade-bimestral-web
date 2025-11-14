@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from "../styles/avaliacao_page.module.css"
 
 export function Avaliacao() {
   const [email, setEmail] = useState("");
@@ -38,29 +39,34 @@ export function Avaliacao() {
     <>
       <h1>Criar Avaliação</h1>
 
-      <form onSubmit={handleSubmit}>
-        <label>Email:</label>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+      <div className={styles.containerAvaliacao}>
+  <form onSubmit={handleSubmit}>
+    
+    <div className={styles.linha}>
+      <label>Email:</label>
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        required
+      />
+    </div>
 
-        <br />
+    <div className={styles.linha}>
+      <label>Avaliação:</label>
+      <input
+        type="text"
+        value={avaliacao}
+        onChange={(e) => setAvaliacao(e.target.value)}
+        required
+      />
+    </div>
 
-        <label>Avaliação:</label>
-        <input
-          type="text"
-          value={avaliacao}
-          onChange={(e) => setAvaliacao(e.target.value)}
-          required
-        />
+    <button type="submit">Enviar</button>
+  </form>
+</div>
 
-        <br />
-
-        <button type="submit">Enviar</button>
-      </form>
+      
 
       {mensagem && <p>{mensagem}</p>}
     </>

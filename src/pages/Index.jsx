@@ -31,6 +31,9 @@ export function Index() {
         <Redes />
       </main>
 
+      <aside>
+        <Conteudos />
+      </aside>
       
       
       <footer>
