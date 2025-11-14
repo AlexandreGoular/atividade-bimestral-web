@@ -75,24 +75,40 @@ export function Avaliacoes() {
   };
 
   return (
-    <>
-      <Navbar />
-      <div className={styles.topicos}>
-        <h1>Email</h1>
-        <h1>Avaliação</h1>
-      </div>
-      <ul>
-        {avaliacoes.map((a) => (
-          <li key={a.id}>
-            <strong>{a.email}</strong> - {a.avaliacao}
-            <div>
-              <button onClick={() => editarAvaliacao(a.id, a.avaliacao)}>Editar</button>
-              <button onClick={() => excluirAvaliacao(a.id)}>Excluir</button>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </>
-  );
+  <>
+    <Navbar />
+    <div className={styles.topicos}>
+      <h1>Email</h1>
+      <h1>Avaliação</h1>
+    </div>
+
+    <ul className={styles.lista}>
+      {avaliacoes.map((a) => (
+        <li className={styles.item} key={a.id}>
+          <div className={styles.itemText}>
+            <strong className={styles.email}>{a.email}</strong>
+            <span className={styles.avaliacao}> - {a.avaliacao}</span>
+          </div>
+
+          <div className={styles.actions}>
+            <button
+              className={styles.editar}
+              onClick={() => editarAvaliacao(a.id, a.avaliacao)}
+            >
+              Editar
+            </button>
+            <button
+              className={styles.deletar}
+              onClick={() => excluirAvaliacao(a.id)}
+            >
+              Excluir
+            </button>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </>
+)
+
 }
 

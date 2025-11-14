@@ -7,8 +7,8 @@ export function Navbar() {
       <div className={styles.navbar}>
         <Link to="/">Home</Link>
         <a href="#on">On</a>
-        <a href="#">Download</a>
-        <a href="#">Assentment</a>
+        <a href="/">Download</a>
+        <a href="#avaliacao">Assentment</a>
         <a href="/login">Admin</a>
       </div>
     </>

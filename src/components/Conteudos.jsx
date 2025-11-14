@@ -8,7 +8,7 @@ import styles from "../styles/index.module.css";
 export function Conteudos() {
   return (
     <>
-      <div className={styles.conteudos}>
+      <div id="on" className={styles.conteudos}>
       <div className={styles.world}>
         <img src={foto} className={styles.foto1} />
         <h2>{textoWorld}</h2>

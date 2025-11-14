@@ -1,14 +1,75 @@
-.avaliacao {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-bottom: 5px;
+.topicos {
+  width: 80%;
+  margin: 40px auto 10px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 15px;
+  font-weight: bold;
 }
 
-.topicos {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-top: 50px;
-    margin-bottom: 20px;
+ul {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+
+li {
+  background: #f4f4f4;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ddd;
+}
+
+
+li strong {
+  font-size: 18px;
+  color: #333;
+}
+
+li span {
+  font-size: 16px;
+}
+
+
+li div {
+  display: flex;
+  gap: 10px;
+}
+
+
+li button:first-child {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+
+li button:first-child:hover {
+  background-color: #0056b3;
+}
+
+
+li button:last-child {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+
+li button:last-child:hover {
+  background-color: #a71d2a;
 }
